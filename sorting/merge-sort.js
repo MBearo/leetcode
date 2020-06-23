@@ -20,4 +20,4 @@ function merge(left, right) {
   return result.concat(i < left.length ? left.slice(i) : right.slice(j))
 }
 
-mergeSort([29,10,14,37,14])
+mergeSort([29, 10, 14, 37, 14])

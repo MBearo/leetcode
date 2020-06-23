@@ -4,9 +4,8 @@ function quickSort(array) {
   return quick(array, 0, array.length - 1)
 }
 function quick(array, left, right) {
-  let index;
   if (array.length > 1) {
-    index = partition(array, left, right)
+    const index = partition(array, left, right)
     if (left < index - 1) {
       quick(array, left, index - 1)
     }
