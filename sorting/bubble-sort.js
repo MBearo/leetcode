@@ -1,3 +1,6 @@
+/**
+ * @description 冒泡排序
+ */
 const { swap } = require('../util')
 
 function bubbleSort(array) {

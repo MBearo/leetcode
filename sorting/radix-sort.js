@@ -1,3 +1,7 @@
+/**
+ * @description 基数排序
+ */
+
 // 10 进制
 function radixSort(array, radixBase = 10) {
   if (array.length < 2) {

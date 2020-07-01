@@ -1,3 +1,6 @@
+/**
+ * @description 插入排序
+ */
 function insertionSort(array) {
   const { length } = array
   let temp

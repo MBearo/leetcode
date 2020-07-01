@@ -1,3 +1,6 @@
+/**
+ * @description 桶排序
+ */
 const { insertionSort } = require('./insert-sort')
 
 function createBuckets(array, bucketSize) {

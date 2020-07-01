@@ -1,3 +1,6 @@
+/**
+ * @description 归并排序
+ */
 function mergeSort(array) {
   const { length } = array
   if (length > 1) {

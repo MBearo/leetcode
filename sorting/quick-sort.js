@@ -1,3 +1,6 @@
+/**
+ * @description 快速排序
+ */
 const { swap } = require('../util')
 
 function quickSort(array) {

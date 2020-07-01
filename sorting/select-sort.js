@@ -1,3 +1,6 @@
+/**
+ * @description 选择排序
+ */
 const { swap } = require("../util")
 
 function selectSort(array) {
