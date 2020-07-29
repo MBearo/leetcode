@@ -10,7 +10,7 @@ function quick(array, left, right) {
     return false;
   }
   let obj = partition(array, left, right);
-  // 递归执行: 将没有大于p,和小于p区间的元素在进行三路快排
+  // 递归执行: 将没有大于 pivot,和小于 pivot 区间的元素在进行三路快排
   quick(array, left, obj.lt);
   quick(array, obj.gt, right);
 }
@@ -31,14 +31,14 @@ const partition = function (array, left, right) {
   let i = left + 1
   while (i < gt) {
     if (array[i] === pivot) {
-      // 当前i指向的元素等于pivot
+      // 当前i指向的元素等于 pivot
       i++;
     } else if (array[i] > pivot) {
-      // 当前i指向的元素大于pivot，将gt-1处的元素与当前索引处的元素交换位置，gt--
+      // 当前i指向的元素大于 pivot，将 gt-1 处的元素与当前索引处的元素交换位置，gt--
       swap(array, gt - 1, i)
       gt--;
     } else {
-      // 当前i指向的元素小于pivot，将lt+1处的元素与当前索引处的元素交换位置，lt+1，i+1
+      // 当前i指向的元素小于 pivot，将 lt+1 处的元素与当前索引处的元素交换位置，lt+1，i+1
       swap(array, lt + 1, i)
       lt++;
       i++;
@@ -49,6 +49,6 @@ const partition = function (array, left, right) {
   swap(array, left, lt)
   lt--;
   console.log(`三路快排后的数组: ${array}`);
-  return { lt: lt, gt: gt };
+  return { lt, gt };
 }
 console.log(quickSort([3, 5, 1, 6, 4, 7, 2]))
