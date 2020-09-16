@@ -4,18 +4,22 @@ class MinHeap {
   constructor() {
     this.heap = []
   }
+  // 获取左子节点
   getLeftIndex(index) {
     return 2 * index + 1
   }
+  // 获取右子节点
   getRightIndex(index) {
     return 2 * index + 1
   }
+  // 获取父节点
   getParentIndex(index) {
     if (index === 0) {
       return undefined
     }
     return Math.floor((index - 1) / 2)
   }
+  // 添加元素
   insert(value) {
     if (value != null) {
       this.heap.push(value)
@@ -24,6 +28,7 @@ class MinHeap {
     }
     return false
   }
+  // 上移元素
   siftUp(index) {
     let parent = this.getParentIndex(index)
     while (index > 0 && this.heap[parent] > this.heap[index]) {
@@ -41,6 +46,7 @@ class MinHeap {
   findMinimum() {
     return this.isEmpty() ? undefined : this.heap[0]
   }
+  // 移除第一个元素
   extract() {
     if (this.isEmpty()) {
       return undefined
@@ -52,6 +58,7 @@ class MinHeap {
     this.siftDown(0)
     return removeValue
   }
+  // 下移元素
   siftDown(index) {
     let element = index
     const left = this.getLeftIndex(index)
