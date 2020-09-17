@@ -4,6 +4,9 @@ class MinHeap {
   constructor() {
     this.heap = []
   }
+  size() {
+    return this.heap.length
+  }
   getParentIndex(index) {
     if (index === 0) return undefined
     return Math.floor((index - 1) / 2)
@@ -41,11 +44,11 @@ class MinHeap {
     const left = this.heap[leftIndex]
     const right = this.heap[rightIndex]
     let i = index
-
-    if (value > left) [
+    const size = this.size()
+    if (left < size && value > left) [
       i = leftIndex
     ]
-    if (value > right) {
+    if (right < size && value > right) {
       i = rightIndex
     }
     if (i !== index) {
