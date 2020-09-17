@@ -22,6 +22,9 @@ class MinHeap {
     this.top(this.heap.length - 1)
   }
   extract() {
+    if (this.size() === 1) {
+      return this.heap.shift()
+    }
     const minimum = this.heap[0]
     this.heap[0] = this.heap.pop()
     this.bottom(0)
