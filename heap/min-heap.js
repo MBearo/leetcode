@@ -54,9 +54,10 @@ class MinHeap {
     if (this.size() === 1) {
       return this.heap.shift()
     }
-    const removeValue = this.heap.shift()
-    this.siftDown(0)
-    return removeValue
+    const removedValue = this.heap[0];
+    this.heap[0] = this.heap.pop();
+    this.siftDown(0);
+    return removedValue
   }
   // 下移元素
   siftDown(index) {
@@ -64,6 +65,7 @@ class MinHeap {
     const left = this.getLeftIndex(index)
     const right = this.getRightIndex(index)
     const size = this.size()
+    // 这里太妙了，尽量保证左子节点比右子节点小
     if (left < size && this.heap[element] > this.heap[left]) {
       element = left
     }
@@ -76,3 +78,16 @@ class MinHeap {
     }
   }
 }
+
+const heap = new MinHeap()
+heap.insert(5)
+heap.insert(2)
+heap.insert(4)
+heap.insert(3)
+heap.insert(1)
+
+
+
+console.log(heap.heap)
+console.log(heap.extract())
+console.log(heap.heap)
